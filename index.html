@@ -44,7 +44,9 @@
     :root{--bg:#f6f1e8;--ink:#241a12;--muted:#7d6c5c;--accent:#a9743c;--accent-soft:#e9d9bf;--card:#fffdf8;--line:rgba(36,26,18,.16);--hero-ov:rgba(246,241,232,.86)}
     *{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--bg)}body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}::selection{background:var(--accent);color:#fff}img{display:block;max-width:100%}
     .progress{position:fixed;z-index:100;left:0;top:0;height:3px;width:100%;pointer-events:none}.progress span{display:block;height:100%;transform:scaleX(0);transform-origin:left;background:var(--accent)}
-    .brand{position:absolute;z-index:3;top:clamp(1.25rem,3vw,2.25rem);left:clamp(1.25rem,3vw,2.5rem);color:var(--ink);font-family:"Archivo Black",sans-serif;font-size:clamp(.82rem,1.35vw,1.05rem);line-height:1.15;letter-spacing:-.035em;white-space:nowrap}.brand small{display:block;font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-top:.3rem}
+    .topnav{position:sticky;top:0;z-index:60;background:var(--bg);border-bottom:1px solid var(--line);padding:.85rem 1.25rem;display:flex;align-items:center}
+    .topnav-brand{font-family:"Archivo Black",sans-serif;font-size:.88rem;letter-spacing:-.035em;line-height:1.15;color:var(--ink)}
+    .topnav-brand small{display:block;font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-top:.25rem}
     .hero{position:relative;overflow:hidden;margin:1.25rem;border-radius:18px;min-height:92svh;display:flex;align-items:flex-end;isolation:isolate}
     .hero-bg{position:absolute;inset:0;z-index:-2}.hero-bg img{width:100%;height:100%;object-fit:cover}
     .hero-ov{position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,var(--hero-ov) 32%,rgba(0,0,0,0) 78%)}
@@ -98,7 +100,7 @@
     .footer-line{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:4rem;font:400 .62rem/1.4 "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.08em}
     .copyright{margin:2rem 0 0;text-align:center;color:rgba(246,241,232,.55);font:400 .58rem/1.5 "IBM Plex Mono",monospace;letter-spacing:.04em}
     @media(min-width:1120px){.slideshow,.sessions,.about,.contact{padding-inline:2.5rem}}
-    @media(max-width:600px){.brand{font-size:.82rem}.hero{margin:.75rem;min-height:88svh}.hero-content{min-width:0;padding:1.5rem 1rem}h1{font-size:clamp(2.35rem,11.6vw,2.85rem)}.slides{height:min(70vh,560px)}.slide-img{padding:.75rem}.nav{width:2.6rem;height:2.6rem}.nav.prev{left:.4rem}.nav.next{right:.4rem}.footer-line{display:block}.footer-line span{display:block;margin-top:.6rem}}
+    @media(max-width:600px){.topnav{padding:.75rem 1rem}.topnav-brand{font-size:.82rem}.hero{margin:.75rem;min-height:88svh}.hero-content{min-width:0;padding:1.5rem 1rem}h1{font-size:clamp(2.35rem,11.6vw,2.85rem)}.slides{height:min(70vh,560px)}.slide-img{padding:.75rem}.nav{width:2.6rem;height:2.6rem}.nav.prev{left:.4rem}.nav.next{right:.4rem}.footer-line{display:block}.footer-line span{display:block;margin-top:.6rem}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
   </style>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -106,10 +108,13 @@
 <body>
   <div class="progress" aria-hidden="true"><span></span></div>
 
+  <nav class="topnav">
+    <a class="topnav-brand" href="#top">MOMENTS<small>by Pixel Peak Studio</small></a>
+  </nav>
+
   <header class="hero">
     <div class="hero-bg" aria-hidden="true"><img src="images/18630077131021576_0.jpg" alt="" /></div>
     <div class="hero-ov" aria-hidden="true"></div>
-    <a class="brand" href="#top">MOMENTS<small>by Pixel Peak Studio</small></a>
     <div class="hero-content" id="top">
       <h1>Real moments, beautifully kept.</h1>
       <div class="hero-sub">
@@ -126,7 +131,7 @@
     <div class="wrap">
       <div class="section-tag">Latest work</div>
       <h2>Moments, straight from the studio.</h2>
-      <p class="slideshow-lede">A running slideshow of recent sessions, pulled from <a href="https://www.instagram.com/pixelpeak.moments/">@pixelpeak.moments</a>. New work lands here as it is posted.</p>
+      <p class="slideshow-lede">Recent sessions from our Instagram page.<br><a href="https://www.instagram.com/pixelpeak.moments/" target="_blank" rel="noopener">Click to visit page &rarr;</a></p>
       <div class="stage">
         <div class="frame">
           <div class="slides" id="slides" aria-live="polite">
